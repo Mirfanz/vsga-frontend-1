@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../vendor/swiperjs/swiper.css" />
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Produk Kami | FanStore</title>
+    <style>
+      .navbar .container .custom-nav-item {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 0.75rem;
+        background-color: rgb(235, 235, 235);
+        color: black;
+      }
+      .form-fdf {
+        transition: 100ms;
+        width: max-content;
+      }
+      .form-fdf input {
+        width: 10rem;
+      }
+      .form-fdf:hover {
+        background-color: rgb(235, 235, 235) !important;
+        box-shadow: 0 0px 5px 0px blueviolet;
+      }
+      .swiper-category {
+        user-select: none;
+      }
+      .swiper-slide {
+        width: max-content;
+      }
+      .swiper-category .swiper-slide label {
+        padding: 0.375rem 0.75rem;
+        background-color: rgb(235, 235, 235);
+        border-radius: 0.5rem;
+        transition: 300ms;
+      }
+      .swiper-category .swiper-slide label:where(:hover, :focus, .active) {
+        background-color: royalblue;
+        color: white;
+      }
+      .swiper-category .swiper-slide input {
+        padding-inline: 0.75rem;
+        border-radius: 1rem;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
+      }
+      .product {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.9);
+        max-width: 250px;
+      }
+      .product-title {
+        font-size: 1rem;
+      }
+      .product-image {
+        width: 100%;
+        border-radius: 1rem;
+        aspect-ratio: 1/1;
+      }
+      .product-price {
+        color: deeppink;
+      }
+      .product-star {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container overflow-visible gap-2" style="overflow-x: hidden">
+        <a class="custom-nav-item" href="index.html"><i class="fa fa-chevron-left"></i></a>
+        <h3 class="my-0 d-none d-sm-block">Products</h3>
+        <form action="" class="ms-auto form-control form-fdf bg-light" onclick="this.querySelector('input').focus()" autocomplete="off" style="aspect-ratio: unset">
+          <button class="border-0 bg-transparent"><i class="fa fa-search"></i></button>
+          <input class="bg-transparent border-0" placeholder="Temukan produk" style="outline: none" type="search" name="query" required />
+        </form>
+        <a class="custom-nav-item" href="#offcanvasFilter" data-bs-toggle="offcanvas"><i class="fa fa-sliders"></i></a>
+        <!-- <div class="btn-group">
+          <a class="custom-nav-item" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-v"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#modelAddProduct" data-bs-toggle="modal"><i class="fa fa-plus-square"></i> Tambah Produk</a>
+            </li>
+            <li>
+              <a class="dropdown-item"> <i class="fa-solid fa-arrow-down-wide-short"></i>Urutkan </a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+    <form action="">
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasFilter" aria-labelledby="offcanvasFilterLabel" style="height: max-content; border-radius: 1rem 1rem 0 0">
+        <div class="offcanvas-header pb-0">
+          <h5 class="offcanvas-title mb-0" id="offcanvasFilterLabel">Filter Products</h5>
+          <button type="reset" class="btn btn-sm btn-danger ms-auto">Reset</button>
+          <button type="button" class="btn btn-sm btn-success ms-1">Apply</button>
+        </div>
+        <div class="offcanvas-body">Maaf Lurr, fitur ini belum tersedia .>_<. Hubungi pengembang aplikasi <a class="link-primary" href="//wa.me/6282323864176" target="blank">di sini</a>.</div>
+      </div>
+    </form>
+    <div class="container" style="overflow-x: hidden">
+      <section class="my-2">
+        <form action="">
+          <div class="swiper swiper-category">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <label class="active">
+                  Semua
+                  <input class="visually-hidden" type="radio" name="category" value="semua" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Voucher
+                  <input class="visually-hidden" type="radio" name="category" value="voucher" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Game
+                  <input class="visually-hidden" type="radio" name="category" value="game" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Peralatan
+                  <input class="visually-hidden" type="radio" name="category" value="peralatan" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Baju
+                  <input class="visually-hidden" type="radio" name="category" value="baju" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Celana
+                  <input class="visually-hidden" type="radio" name="category" value="celana" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Aksesoris
+                  <input class="visually-hidden" type="radio" name="category" value="aksesoris" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Interior
+                  <input class="visually-hidden" type="radio" name="category" value="interior" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Exterior
+                  <input class="visually-hidden" type="radio" name="category" value="exterior" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Komputer
+                  <input class="visually-hidden" type="radio" name="category" value="komputer" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Handphone
+                  <input class="visually-hidden" type="radio" name="category" value="handphone" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Perabot
+                  <input class="visually-hidden" type="radio" name="category" value="perabot" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Sekolah
+                  <input class="visually-hidden" type="radio" name="category" value="sekolah" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Transportasi
+                  <input class="visually-hidden" type="radio" name="category" value="transportasi" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Listrik
+                  <input class="visually-hidden" type="radio" name="category" value="listrik" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Makanan
+                  <input class="visually-hidden" type="radio" name="category" value="makanan" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Minuman
+                  <input class="visually-hidden" type="radio" name="category" value="minuman" />
+                </label>
+              </div>
+              <div class="swiper-slide">
+                <label>
+                  Kecantikan
+                  <input class="visually-hidden" type="radio" name="category" value="kecantikan" />
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="my-3">
+        <div class="products">
+          <!-- <a class="product">
+        <img class="product-image" />
+        <div class="product-body">
+          <h5 class="product-title text-truncate mb-0">Sonic The Hedgedog 2</h5>
+          <div class="d-flex justify-content-between">
+            <div class="product-price">Rp.200.000</div>
+            <div class="product-star">
+              <i class="bx bxs-heart"></i> <span>35</span>
+            </div>
+          </div>
+        </div>
+      </a> -->
+        </div>
+      </section>
+      <button class="btn-show-more my-3 btn btn-primary">Show More</button>
+    </div>
+
+    <footer>
+      <style>
+        .waves {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          margin-bottom: -7px; /*Fix for safari gap*/
+          min-height: 100px;
+          max-height: 150px;
+        }
+
+        /* Animation */
+        .parallax > use {
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+          animation-delay: -2s;
+          animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+          animation-delay: -3s;
+          animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+          animation-delay: -4s;
+          animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+          animation-delay: -5s;
+          animation-duration: 20s;
+        }
+        @keyframes move-forever {
+          0% {
+            transform: translate3d(-90px, 0, 0);
+          }
+          100% {
+            transform: translate3d(85px, 0, 0);
+          }
+        }
+        /*Shrinking for mobile*/
+        @media (max-width: 768px) {
+          .waves {
+            height: 40px;
+            min-height: 40px;
+          }
+        }
+      </style>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(138, 43, 226,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(138, 43, 226,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(138, 43, 226,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(138, 43, 226)" />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center text-light py-2" style="background-color: blueviolet">&copy; Copyright 2022 by FanDev.</div>
+    </footer>
+    <script src="../vendor/fontawesome/js/all.min.js"></script>
+    <script src="../vendor/sweetalert/sweetalert.js"></script>
+    <script src="../vendor/swiperjs/swiper.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const swiper1 = new Swiper(".swiper-category", {
+        slidesPerView: "auto",
+        spaceBetween: 5,
+        freeMode: true,
+      });
+      const productsContainer = document.querySelector(".products");
+      const btnShowMore = document.querySelector(".btn-show-more");
+      let lastIndex = 0;
+      function getProducts() {
+        btnShowMore.disabled = true;
+        if (lastIndex >= 100)
+          return swal({
+            title: "Tidak Ditemukan!",
+            text: "Semua produk telah ditampilkan.",
+            icon: "warning",
+          });
+        for (i = 0; i < 20; i++) {
+          const price = Math.round(Math.random() * 99 + 1);
+          const views = Math.floor(Math.random() * 1000);
+          const likes = Math.floor(Math.random() * views);
+          const a = document.createElement("a");
+          a.classList.add("product");
+          a.href = 'detail.html';
+          a.innerHTML;
+          a.innerHTML = `
+            <img class="product-image" src="assets/img/albert einstein.jpg" loading="lazy" alt="Image Produk" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Nama Produk Harusnya Tampil Disini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.${price}.000</div>
+                <div class="product-star">
+                  <i class="far fa-heart"></i> <span>${likes}</span>
+                </div>
+              </div>
+            </div>
+          `;
+          productsContainer.appendChild(a);
+        }
+        lastIndex += 20;
+        btnShowMore.disabled = false;
+      }
+
+      // getProduct();
+      // btnShowMore.onclick = getProducts;
+
+      getProducts();
+      btnShowMore.onclick = (e) => {
+        getProducts();
+      };
+    </script>
+  </body>
+</html>

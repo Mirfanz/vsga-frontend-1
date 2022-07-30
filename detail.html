@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../vendor/swiperjs/swiper.css" />
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Detail | FanStore</title>
+    <link rel="stylesheet" href="css/animations.css" />
+    <style>
+      body {
+        font-family: "outfit", sans-serif;
+      }
+      .navbar .custom-nav-item {
+        /* padding: 0.3rem 0.6rem; */
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 0.75rem;
+        color: rgba(0, 0, 0, 0.75);
+        background-color: rgb(245, 245, 245);
+      }
+      
+      .navbar label.custom-nav-item.active svg{
+        color: deeppink;
+        animation: tada 1000ms;
+      }
+      .swiper-detail {
+        overflow: visible;
+        max-width: 500px;
+      }
+      .swiper-detail .swiper-slide {
+        transition: all 300ms;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 4px 7px gray;
+      }
+      .swiper-detail .swiper-slide:not(.swiper-slide-active) {
+        filter: grayscale(100%);
+        transform: scale(0.9);
+      }
+      .swiper-detail .swiper-slide img {
+        width: 100%;
+        aspect-ratio: 1/1;
+      }
+      .swiper-pagination-bullet {
+        transition: 300ms;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: blueviolet;
+        transform: scale(1.5);
+      }
+      .slide-next,
+      .slide-prev {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0;
+        /* font-size: 1.5rem; */
+        width: 2.5rem;
+        margin-top: -1.5rem;
+        backdrop-filter: blur(5px);
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        color: white;
+        transition: 300ms;
+      }
+      .slide-next:disabled,
+      .slide-prev:disabled {
+        opacity: 0.2;
+      }
+      .slide-prev {
+        left: 0;
+      }
+      .slide-next {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container gap-2">
+        <a class="custom-nav-item me-auto" href="index.html"><i class="fa fa-chevron-left"></i></a>
+        <a class="custom-nav-item text-primary" href="#"><i class="fa fa-share-alt"></i></a>
+        <label class="custom-nav-item" id="btnLove">
+          <input class="visually-hidden" type="checkbox" />
+          <i class="fas fa-heart"></i>
+        </label>
+        <div class="dropdown">
+          <a class="custom-nav-item" href="#" type="button" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end py-0">
+            <li>
+              <a href="#" class="dropdown-item">
+                <small><i class="far fa-flag"></i></small>
+                Laporkan
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="overflow-x: hidden">
+      <section class="my-3">
+        <h2 class="product-title text-center mb-3">Nama Produk Harusnya Tampil Disini</h2>
+        <div class="swiper swiper-detail">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/img/albert einstein.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/albert einstein.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/albert einstein.jpg" alt="" />
+            </div>
+          </div>
+          <button class="slide-prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="slide-next"><i class="fas fa-chevron-right"></i></button>
+          <div class="text-center custom-pagination"></div>
+        </div>
+      </section>
+      <section class="mt-3">
+        <h4>Deskripsi</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus eaque quos non vero rem commodi, a, magnam qui eius natus sunt! Unde quaerat voluptatum, eaque esse in laborum expedita, doloribus asperiores accusamus veniam
+          molestias repellendus adipisci officiis optio excepturi inventore ut aliquid blanditiis, magni eligendi dolorem. Non magni consequuntur dolorem.
+        </p>
+      </section>
+      <section class="mt-3">
+        <h4>Harga</h4>
+        <p style="color: var(--bs-indigo)">Rp.250.000</p>
+      </section>
+      <section class="my-3">
+        <table>
+          <tr>
+            <td style="text-align: center"><i class="far fa-eye"></i></td>
+            <td>2.538 views</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><i class="far fa-heart"></i></td>
+            <td>482 loves</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><i class="far fa-calendar-check"></i></td>
+            <td>17 Agustus 2022</td>
+          </tr>
+        </table>
+      </section>
+      <section class="my-1">
+        <a href="//wa.me/6282323864176?text=Text%20disini" target="blank" class="btn btn-success w-100 mb-2">Kirim Pesan Whatsapp</a>
+        <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBuy" aria-controls="offcanvasBuy">Beli Di Aplikasi Belanja</button>
+      </section>
+      <div class="offcanvas offcanvas-bottom" style="border-radius: 1rem 1rem 0 0" tabindex="-1" id="offcanvasBuy" aria-labelledby="offcanvasBuyLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title mb-0" id="offcanvasBuyLabel">Beli di aplikasi</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="text-center text-decoration-none">
+              <img src="assets/img/platform/shopee.png" alt="" width="50px" />
+              <div>Shopee</div>
+            </a>
+            <a href="#" class="text-center text-decoration-none">
+              <img src="assets/img/platform/tokopedia.png" alt="" width="50px" />
+              <div>Tokopedia</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <style>
+        .waves {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          margin-bottom: -7px; /*Fix for safari gap*/
+          min-height: 100px;
+          max-height: 150px;
+        }
+
+        /* Animation */
+        .parallax > use {
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+          animation-delay: -2s;
+          animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+          animation-delay: -3s;
+          animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+          animation-delay: -4s;
+          animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+          animation-delay: -5s;
+          animation-duration: 20s;
+        }
+        @keyframes move-forever {
+          0% {
+            transform: translate3d(-90px, 0, 0);
+          }
+          100% {
+            transform: translate3d(85px, 0, 0);
+          }
+        }
+        /*Shrinking for mobile*/
+        @media (max-width: 768px) {
+          .waves {
+            height: 40px;
+            min-height: 40px;
+          }
+        }
+      </style>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(138, 43, 226,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(138, 43, 226,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(138, 43, 226,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(138, 43, 226)" />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center text-light py-2" style="background-color: blueviolet">&copy; Copyright 2022 by FanDev.</div>
+    </footer>
+    <script src="../vendor/fontawesome/js/all.min.js"></script>
+    <script src="../vendor/sweetalert/sweetalert.js"></script>
+    <script src="../vendor/swiperjs/swiper.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const swiper1 = new Swiper(".swiper-detail", {
+        spaceBetween: 15,
+        pagination: {
+          el: ".custom-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".slide-next",
+          prevEl: ".slide-prev",
+        },
+      });
+      const btnLove = document.querySelector("#btnLove input");
+      btnLove.onchange = function () {
+        if (this.checked) return this.parentElement.classList.add("active");
+        this.parentElement.classList.remove("active");
+      };
+    </script>
+  </body>
+</html>

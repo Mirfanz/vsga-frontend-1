@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../vendor/swiperjs/swiper.css" />
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>FanStore | Belanja mudah pasti hemat</title>
+    <style>
+      body {
+        font-family: "outfit", sans-serif;
+      }
+      .navbar .container .custom-nav-item {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 0.75rem;
+        background-color: rgb(235, 235, 235);
+        color: black;
+      }
+      .form-fdf {
+        transition: 100ms;
+        width: max-content;
+      }
+      .form-fdf input {
+        width: 10rem;
+      }
+      .form-fdf:hover {
+        background-color: rgb(235, 235, 235) !important;
+        box-shadow: 0 0px 5px 0px blueviolet;
+      }
+
+      .table-products {
+        vertical-align: middle;
+      }
+      .table-products .product-index {
+      }
+      .table-products .product-image {
+        /* width: 40px; */
+      }
+      .table-products td.product-image img {
+        width: 40px;
+        aspect-ratio: 1/1;
+      }
+      .table-products td.product-name {
+        min-width: max-content;
+        width: 100%;
+      }
+      .table-products td.product-price {
+        color: blueviolet !important;
+      }
+      .table-products td.product-views {
+        color: royalblue !important;
+      }
+      .table-products td.product-likes {
+        color: rgb(235, 37, 143) !important;
+      }
+      @media only screen and (max-width: 576px) {
+        .table-products :where(.product-views, .product-likes, .product-price) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container overflow-visible gap-2" style="overflow-x: hidden">
+        <a class="custom-nav-item" href="index.html"><i class="fa fa-chevron-left"></i></a>
+        <h3 class="my-0 d-none d-sm-block">Products</h3>
+        <form action="" class="ms-auto form-control form-fdf bg-light" onclick="this.querySelector('input').focus()" autocomplete="off" style="aspect-ratio: unset">
+          <button class="border-0 bg-transparent"><i class="fa fa-search"></i></button>
+          <input class="bg-transparent border-0" placeholder="Temukan produk" style="outline: none" type="search" name="query" required />
+        </form>
+        <a class="custom-nav-item"><i class="fa fa-sliders"></i></a>
+        <div class="btn-group">
+          <a class="custom-nav-item" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-v"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#modelAddProduct" data-bs-toggle="modal"><i class="fa fa-plus-square"></i> Tambah Produk</a>
+            </li>
+            <li>
+              <a class="dropdown-item"> <i class="fa-solid fa-arrow-down-wide-short"></i>Urutkan </a>
+              <ul class="dropdown-menu dropdown-submenu-left dropdown-submenu">
+                <form name="form-sort">
+                  <li>
+                    <label class="dropdown-item">
+                      Nama A-Z
+                      <input class="visually-hidden" name="sort" type="radio" value="0" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Nama Z-A
+                      <input class="visually-hidden" name="sort" type="radio" value="1" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Terbaru
+                      <input class="visually-hidden" name="sort" type="radio" value="3" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Terlama
+                      <input class="visually-hidden" name="sort" type="radio" value="2" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Termurah
+                      <input class="visually-hidden" name="sort" type="radio" value="4" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Termahal
+                      <input class="visually-hidden" name="sort" type="radio" value="5" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Disukai Terbanyak
+                      <input class="visually-hidden" name="sort" type="radio" value="7" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Disukai Tersedikit
+                      <input class="visually-hidden" name="sort" type="radio" value="6" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Dilihat Terbanyak
+                      <input class="visually-hidden" name="sort" type="radio" value="9" />
+                    </label>
+                  </li>
+                  <li>
+                    <label class="dropdown-item">
+                      Dilihat Tersedikit
+                      <input class="visually-hidden" name="sort" type="radio" value="8" />
+                    </label>
+                  </li>
+                </form>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="overflow-x: auto">
+      <table class="table-products table-hover table table-striped table-inverse table-responsive">
+        <thead class="thead-inverse">
+          <tr>
+            <th class="product-index">#</th>
+            <th class="product-image">Foto</th>
+
+            <th class="product-name">Nama</th>
+            <th class="product-price">Harga</th>
+            <th class="product-views">Dilihat</th>
+            <th class="product-likes">Disukai</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6">
+              <button class="btn btn-primary w-100 btn-show-more" disabled>Show More</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Modal -->
+    <form enctype="multipart/form-data" autocomplete="off" name="form-add-product">
+      <div class="modal fade" id="modelAddProduct" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Tambah Produk</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Nama</label>
+                <input type="text" class="form-control" required minlength="5" maxlength="225" name="name" placeholder="Example Product Name" />
+              </div>
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label class="form-label">Harga</label>
+                  <input type="number" class="form-control" required min="1000" max="100000000" name="price" placeholder="IDR ( Rupiah )" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label">Kategori</label>
+                  <select name="category" class="form-select" required>
+                    <option value="1">Baju</option>
+                    <option value="2">Celana</option>
+                    <option value="4" selected>Lainnya</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Deskripsi</label>
+                <textarea name="description" class="form-control" required rows="5" placeholder="Put your product detail here"></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Foto Produk</label>
+                <input type="file" class="form-control" accept="image/jpeg,image/png" name="image" aria-describedby="fileHelpId" />
+                <small id="fileHelpId" class="form-text">*max size 1Mb</small>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Modal Detail -->
+    <div class="modal fade" id="modalDetailProduct" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content overflow-hidden">
+          <div class="modal-header">
+            <h5 class="modal-title product-name">Product Name Ayanokoji</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <!-- <iframe src="./detail.html" width="100%" style="height: 90vh;"></iframe> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-success">UPDATE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <style>
+        .waves {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          margin-bottom: -7px; /*Fix for safari gap*/
+          min-height: 100px;
+          max-height: 150px;
+        }
+
+        /* Animation */
+        .parallax > use {
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+          animation-delay: -2s;
+          animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+          animation-delay: -3s;
+          animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+          animation-delay: -4s;
+          animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+          animation-delay: -5s;
+          animation-duration: 20s;
+        }
+        @keyframes move-forever {
+          0% {
+            transform: translate3d(-90px, 0, 0);
+          }
+          100% {
+            transform: translate3d(85px, 0, 0);
+          }
+        }
+        /*Shrinking for mobile*/
+        @media (max-width: 768px) {
+          .waves {
+            height: 40px;
+            min-height: 40px;
+          }
+        }
+      </style>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(138, 43, 226,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(138, 43, 226,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(138, 43, 226,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(138, 43, 226)" />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center text-light py-2" style="background-color: blueviolet">&copy; Copyright 2022 by FanDev.</div>
+    </footer>
+    <script src="../vendor/fontawesome/js/all.min.js"></script>
+    <script src="../vendor/sweetalert/sweetalert.js"></script>
+    <script src="../vendor/swiperjs/swiper.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const productContainer = document.querySelector(".table-products tbody");
+      const btnShowMore = document.querySelector(".btn-show-more");
+      const modalDetail = new bootstrap.Modal("#modalDetailProduct");
+      let lastIndex = 0;
+      function getProduct() {
+        btnShowMore.disabled = true;
+        if (lastIndex >= 100)
+          return swal({
+            title: "Tidak Ditemukan!",
+            text: "Semua produk telah ditampilkan.",
+            icon: "warning",
+          });
+        for (i = lastIndex + 1; i <= lastIndex + 20; i++) {
+          const elem = document.createElement("tr");
+          elem.onclick = showDetail;
+          const price = Math.round(Math.random() * 99 + 1);
+          const views = Math.floor(Math.random() * 1000);
+          const likes = Math.floor(Math.random() * views);
+          elem.innerHTML = `
+          <th class="product-index">${i}</th>
+          <td class="product-image"><img src="assets/img/albert einstein.jpg" alt="" /></td>
+          <td class="product-name">Nama Barang Harusnya Tampil Disini</td>
+          <td class="product-price">Rp.${price}.000</td>
+          <td class="product-views">${views}</td>
+          <td class="product-likes">${likes}</td>
+        `;
+          productContainer.appendChild(elem);
+        }
+        lastIndex += 20;
+        btnShowMore.disabled = false;
+      }
+
+      modalDetail.show();
+      function showDetail() {
+        modalDetail.show();
+      }
+      getProduct();
+      btnShowMore.onclick = getProduct;
+    </script>
+  </body>
+</html>

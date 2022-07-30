@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../vendor/swiperjs/swiper.css" />
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>FanStore | Belanja mudah pasti hemat</title>
+    <link rel="stylesheet" href="css/animations.css" />
+    <style>
+      body {
+        font-family: "outfit", sans-serif;
+      }
+      .navbar .container .custom-nav-item {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 0.75rem;
+        background-color: rgb(235, 235, 235);
+        color: black;
+      }
+
+      .swiper-special-offers {
+        overflow: visible !important;
+        /* background-color: blueviolet; */
+        max-width: 500px;
+      }
+      .swiper-special-offers .swiper-slide img {
+        max-width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 1rem;
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+      }
+      .swiper-pagination-bullet-active {
+        background-color: blueviolet;
+      }
+
+      .search {
+        /* background: linear-gradient(to top, lightgray, transparent); */
+        background-color: rgb(225, 225, 225);
+        padding-inline: 0.5rem 1rem;
+        height: 3rem;
+        display: flex;
+        border-radius: 1rem;
+      }
+      .search button {
+        border: none;
+      }
+      .search input:focus {
+        outline: 0;
+      }
+
+      .categories {
+        display: grid;
+        /* background-color: red; */
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        row-gap: 1rem;
+      }
+      .categories .category {
+        /* background-color: royalblue; */
+        text-align: center;
+        text-decoration: none;
+        color: rgb(25, 25, 25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      .categories .category .icon {
+        background-color: rgb(225, 225, 225);
+        border-radius: 50%;
+        width: 3em;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .categories .category .icon i {
+        transition: 100ms;
+      }
+      .categories .category:hover .icon i {
+        transform: scale(1.75) translateY(-0.1em);
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
+      }
+      .product {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.9);
+      }
+      .product-title {
+        font-size: 1rem;
+      }
+      .product-image {
+        width: 100%;
+        border-radius: 1rem;
+        aspect-ratio: 1/1;
+      }
+      .product-price {
+        color: hotpink;
+      }
+      .product-star {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container gap-2">
+        <img class="navbar-logo" src="assets/logo.png" height="32px" alt="" />
+        <a class="navbar-brand me-auto" href="#">
+          <h3 class="m-0"><strong>Fan Store</strong></h3>
+        </a>
+        <a class="custom-nav-item anim-tada-hover" style="color: deeppink" href="#"><i class="fa fa-heart"></i></a>
+        <a class="custom-nav-item anim-tada-hover" style="color: royalblue" href="products.html"><i class="fa fa-search"></i></a>
+      </div>
+    </nav>
+
+    <div class="container" style="overflow-x: hidden; overflow-y: visible">
+      <form class="my-2" action="products.html" method="GET">
+        <div class="search">
+          <button class="btn bg-transparent"><i class="fa fa-search"></i></button>
+          <input type="search" class="flex-grow-1 bg-transparent border-0" autocomplete="off" name="query" contenteditable="true" placeholder="Temukan produk favoritmu" required />
+        </div>
+      </form>
+      <section class="my-3">
+        <h4><i class="fa fa-microchip"></i>Promo Spesial</h4>
+        <div class="swiper swiper-special-offers">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="assets/img/backdrop-sonic.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="assets/img/backdrop-sonic.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="special-offers-pagintaion"></div>
+        </div>
+      </section>
+      <section class="my-3">
+        <div class="categories gap-1">
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-shirt"></i></div>
+            <div>Pakaian</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-hotdog"></i></div>
+            <div>Makanan</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fa fa-book"></i></div>
+            <div>Sekolah</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fa fa-pen-clip"></i></div>
+            <div>Aksesoris</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-desktop"></i></div>
+            <div>Komputer</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+            <div>Hanphone</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-sim-card"></i></div>
+            <div>Voucher</div>
+          </a>
+          <a href="#" class="category">
+            <div class="icon"><i class="fas fa-ellipsis-h"></i></div>
+            <div>Lainnya</div>
+          </a>
+        </div>
+      </section>
+      <section class="my-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h4 class="mb-0"><i class="fa fa-microchip"></i>Produk Kami</h4>
+          <a href="products.html" class="text-decoration-none my-auto">Lainnya</a>
+        </div>
+        <div class="products">
+          <a href="detail.html" class="product">
+            <img class="product-image" src="assets/img/Iron-Man-end-game-Wallpaper.jpg" loading="lazy" alt="" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Produk Pertama Yang Ini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.20.000</div>
+                <div class="product-star"><i class="far fa-heart"></i> <span>934</span></div>
+              </div>
+            </div>
+          </a>
+          <a href="detail.html" class="product">
+            <img class="product-image" src="assets/img/Iron-Man-end-game-Wallpaper.jpg" loading="lazy" alt="" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Produk Kedua Yang Ini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.45.000</div>
+                <div class="product-star"><i class="far fa-heart"></i> <span>903</span></div>
+              </div>
+            </div>
+          </a>
+          <a href="detail.html" class="product">
+            <img class="product-image" src="assets/img/Iron-Man-end-game-Wallpaper.jpg" loading="lazy" alt="" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Produk Ketiga Yang Ini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.20.000</div>
+                <div class="product-star"><i class="far fa-heart"></i> <span>759</span></div>
+              </div>
+            </div>
+          </a>
+          <a href="detail.html" class="product">
+            <img class="product-image" src="assets/img/Iron-Man-end-game-Wallpaper.jpg" loading="lazy" alt="" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Produk Keempat Yang Ini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.20.000</div>
+                <div class="product-star"><i class="far fa-heart"></i> <span>540</span></div>
+              </div>
+            </div>
+          </a>
+          <a href="detail.html" class="product">
+            <img class="product-image" src="assets/img/Iron-Man-end-game-Wallpaper.jpg" loading="lazy" alt="" />
+            <div class="product-body">
+              <h5 class="product-title text-truncate mb-0">Produk Kelima Yang Ini</h5>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">Rp.20.000</div>
+                <div class="product-star"><i class="far fa-heart"></i> <span>536</span></div>
+              </div>
+            </div>
+          </a>
+          <div class="product bg-light rounded-4 border-primary p-2 h-100 d-flex justify-content-center align-items-center text-primary" style="border: 1px solid">
+            <a class="text-center text-decoration-none" href="products.html">Tampilkan Lebih Banyak</a>
+          </div>
+        </div>
+      </section>
+      <section class="my-3">
+        <h4><i class="fa fa-microchip"></i>Hubungi Kami</h4>
+        <!-- <div class="map-location" style="width: 100%; aspect-ratio: 16/9; border-radius: 1rem; box-shadow: 0 4px 7px gray; max-width: 500px">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                style="width: 100%; aspect-ratio: 16/9; border-radius: 1rem"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=ida%20olshop%20karanggede%20boyolali&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+              <a href="https://123movies-to.org">123movies</a><br />
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  width: 100%;
+                  aspect-ratio: 16/9;
+                  border-radius: 1rem;
+                }
+              </style>
+              <a href="https://www.embedgooglemap.net">full width google map</a>
+              <style>
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  width: 100%;
+                  aspect-ratio: 16/9;
+                  border-radius: 1rem;
+                }
+              </style>
+            </div>
+          </div>
+        </div> -->
+        <div class="d-flex flex-column flex-md-row gap-2">
+          <!-- <div class="order-md-1 w-100"> -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.2286549674523!2d110.6390623657748!3d-7.363467254766216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a740d6fdff1bf%3A0xc7f7eff6902a2fcf!2sKN%20Jaya!5e0!3m2!1sid!2sus!4v1659165108101!5m2!1sid!2sus"
+              style="border: 0; width: 100%; max-width: 500px; aspect-ratio: 16/9; border-radius: 1rem"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          <!-- </div> -->
+          <div class="d-flex gap-2 mt-2 flex-md-column">
+            <a class="btn text-bg-success"><i class="fab fa-whatsapp"></i></a>
+            <a class="btn text-bg-danger"><i class="fab fa-instagram"></i></a>
+            <a class="btn text-bg-primary"><i class="fab fa-facebook"></i></a>
+            <a class="btn text-bg-warning"><i class="fab fa-shopify"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <style>
+        .waves {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          margin-bottom: -7px; /*Fix for safari gap*/
+          min-height: 100px;
+          max-height: 150px;
+        }
+
+        /* Animation */
+        .parallax > use {
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+          animation-delay: -2s;
+          animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+          animation-delay: -3s;
+          animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+          animation-delay: -4s;
+          animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+          animation-delay: -5s;
+          animation-duration: 20s;
+        }
+        @keyframes move-forever {
+          0% {
+            transform: translate3d(-90px, 0, 0);
+          }
+          100% {
+            transform: translate3d(85px, 0, 0);
+          }
+        }
+        /*Shrinking for mobile*/
+        @media (max-width: 768px) {
+          .waves {
+            height: 40px;
+            min-height: 40px;
+          }
+        }
+      </style>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(138, 43, 226,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(138, 43, 226,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(138, 43, 226,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(138, 43, 226)" />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center text-light py-2" style="background-color: blueviolet">&copy; Copyright 2022 by FanDev.</div>
+    </footer>
+    <script src="../vendor/fontawesome/js/all.min.js"></script>
+    <script src="../vendor/sweetalert/sweetalert.js"></script>
+    <script src="../vendor/swiperjs/swiper.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const swiper1 = new Swiper(".swiper-special-offers", {
+        spaceBetween: 10,
+        autoplay: true,
+        pagination: {
+          el: ".special-offers-pagintaion",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+</html>
