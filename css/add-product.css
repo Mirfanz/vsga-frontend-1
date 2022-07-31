@@ -1,0 +1,15 @@
+.form-container{
+  /* background-color: rgb(250,250,250); */
+  margin-block: auto;
+}
+.custom-nav-item {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  background-color: rgb(235, 235, 235);
+  color: black;
+}
