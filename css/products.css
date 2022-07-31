@@ -1,0 +1,32 @@
+@import url("_products.css");
+.form-fdf {
+  transition: 100ms;
+  width: max-content;
+}
+.form-fdf input {
+  width: 10rem;
+}
+.form-fdf:hover {
+  background-color: rgb(235, 235, 235) !important;
+  box-shadow: 0 0px 5px 0px blueviolet;
+}
+.swiper-category {
+  user-select: none;
+}
+.swiper-slide {
+  width: max-content;
+}
+.swiper-category .swiper-slide label {
+  padding: 0.375rem 0.75rem;
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.5rem;
+  transition: 300ms;
+}
+.swiper-category .swiper-slide label:where(:hover, :focus, .active) {
+  background-color: royalblue;
+  color: white;
+}
+.swiper-category .swiper-slide input {
+  padding-inline: 0.75rem;
+  border-radius: 1rem;
+}

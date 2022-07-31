@@ -1,0 +1,23 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+.product {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+.product-title {
+  font-size: 1rem;
+}
+.product-image {
+  width: 100%;
+  border-radius: 5%;
+  aspect-ratio: 1/1;
+}
+.product-price {
+  color: hotpink;
+}
+.product-star {
+  color: orange;
+}

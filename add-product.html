@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <!-- <script src="https://kit.fontawesome.com/0d2a45edb5.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="library/swiperjs/swiper.css" />
+    <link rel="stylesheet" href="library/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>FanStore | Belanja mudah pasti hemat</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/add-product.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container gap-2">
+        <!-- <img class="navbar-logo" src="assets/logo.png" height="32px" alt="" />
+        <a class="navbar-brand me-auto" href="#">
+          <h3 class="m-0"><strong>Fan Store</strong></h3>
+        </a> -->
+        <a class="custom-nav-item anim-tada-hover" href="#"><i class="fa fa-chevron-left"></i></a>
+        <h3 class="my-0">Tambah Produk</h3>
+        <a class="custom-nav-item anim-tada-hover ms-auto" style="color: deeppink" href="#"><i class="fa fa-heart"></i></a>
+        <a class="custom-nav-item anim-tada-hover" style="color: royalblue" href="products.html"><i class="fa fa-search"></i></a>
+      </div>
+    </nav>
+
+    <div class="container" style="overflow-x: hidden; overflow-y: visible">
+      <div class="row">
+        <div class="col col-12 col-md-6">img</div>
+        <div class="col col-12 col-md-6">img</div>
+      </div>
+    </div>
+
+    <footer>
+      <style>
+        .waves {
+          position: relative;
+          width: 100%;
+          height: 15vh;
+          margin-bottom: -7px; /*Fix for safari gap*/
+          min-height: 100px;
+          max-height: 150px;
+        }
+
+        /* Animation */
+        .parallax > use {
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+          animation-delay: -2s;
+          animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+          animation-delay: -3s;
+          animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+          animation-delay: -4s;
+          animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+          animation-delay: -5s;
+          animation-duration: 20s;
+        }
+        @keyframes move-forever {
+          0% {
+            transform: translate3d(-90px, 0, 0);
+          }
+          100% {
+            transform: translate3d(85px, 0, 0);
+          }
+        }
+        /*Shrinking for mobile*/
+        @media (max-width: 768px) {
+          .waves {
+            height: 40px;
+            min-height: 40px;
+          }
+        }
+      </style>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(138, 43, 226,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(138, 43, 226,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(138, 43, 226,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(138, 43, 226)" />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center text-light py-2" style="background-color: blueviolet">&copy; Copyright 2022 by FanDev.</div>
+    </footer>
+    <script src="library/sweetalert/sweetalert.js"></script>
+    <script src="library/swiperjs/swiper.js"></script>
+    <script src="library/fontawesome/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/add-products.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+.navbar label.custom-nav-item.active svg {
+  color: deeppink;
+  animation: tada 1000ms;
+}
+.swiper-detail {
+  overflow: visible;
+  max-width:400px;
+}
+.swiper-detail .swiper-slide {
+  transition: all 300ms;
+  overflow: hidden;
+  border-radius: 5%;
+  box-shadow: 0 4px 7px gray;
+}
+.swiper-detail .swiper-slide:not(.swiper-slide-active) {
+  filter: grayscale(100%);
+  transform: scale(0.9);
+}
+.swiper-detail .swiper-slide img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.swiper-pagination-bullet {
+  transition: 300ms;
+}
+.swiper-pagination-bullet-active {
+  background-color: blueviolet;
+  transform: scale(1.5);
+}
+.slide-next,
+.slide-prev {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0;
+  /* font-size: 1.5rem; */
+  width: 2.5rem;
+  margin-top: -1.5rem;
+  backdrop-filter: blur(5px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  color: white;
+  transition: 300ms;
+}
+.slide-next:disabled,
+.slide-prev:disabled {
+  opacity: 0.2;
+}
+.slide-prev {
+  left: 0;
+}
+.slide-next {
+  right: 0;
+}

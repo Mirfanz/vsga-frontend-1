@@ -9,78 +9,10 @@
     <!-- <script src="https://kit.fontawesome.com/0d2a45edb5.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="library/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="library/swiperjs/swiper.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <title>Produk Kami | FanStore</title>
-    <style>
-      .navbar .container .custom-nav-item {
-        width: 2.5rem;
-        aspect-ratio: 1/1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        border-radius: 0.75rem;
-        background-color: rgb(235, 235, 235);
-        color: black;
-      }
-      .form-fdf {
-        transition: 100ms;
-        width: max-content;
-      }
-      .form-fdf input {
-        width: 10rem;
-      }
-      .form-fdf:hover {
-        background-color: rgb(235, 235, 235) !important;
-        box-shadow: 0 0px 5px 0px blueviolet;
-      }
-      .swiper-category {
-        user-select: none;
-      }
-      .swiper-slide {
-        width: max-content;
-      }
-      .swiper-category .swiper-slide label {
-        padding: 0.375rem 0.75rem;
-        background-color: rgb(235, 235, 235);
-        border-radius: 0.5rem;
-        transition: 300ms;
-      }
-      .swiper-category .swiper-slide label:where(:hover, :focus, .active) {
-        background-color: royalblue;
-        color: white;
-      }
-      .swiper-category .swiper-slide input {
-        padding-inline: 0.75rem;
-        border-radius: 1rem;
-      }
-
-      .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 0.5rem;
-      }
-      .product {
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.9);
-        max-width: 250px;
-      }
-      .product-title {
-        font-size: 1rem;
-      }
-      .product-image {
-        width: 100%;
-        border-radius: 1rem;
-        aspect-ratio: 1/1;
-      }
-      .product-price {
-        color: deeppink;
-      }
-      .product-star {
-        color: orange;
-      }
-    </style>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/products.css" />
   </head>
   <body>
     <nav class="navbar navbar-light">
@@ -92,19 +24,6 @@
           <input class="bg-transparent border-0" placeholder="Temukan produk" style="outline: none" type="search" name="query" required />
         </form>
         <a class="custom-nav-item" href="#offcanvasFilter" data-bs-toggle="offcanvas"><i class="fa fa-sliders"></i></a>
-        <!-- <div class="btn-group">
-          <a class="custom-nav-item" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-ellipsis-v"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <a class="dropdown-item" href="#modelAddProduct" data-bs-toggle="modal"><i class="fa fa-plus-square"></i> Tambah Produk</a>
-            </li>
-            <li>
-              <a class="dropdown-item"> <i class="fa-solid fa-arrow-down-wide-short"></i>Urutkan </a>
-            </li>
-          </ul>
-        </div> -->
       </div>
     </nav>
     <form action="">
@@ -320,7 +239,6 @@
     <script src="library/swiperjs/swiper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="library/fontawesome/js/all.min.js"></script>
-    <!-- <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <script>
       const swiper1 = new Swiper(".swiper-category", {
