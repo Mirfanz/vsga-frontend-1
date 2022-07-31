@@ -65,7 +65,7 @@
           <button class="border-0 bg-transparent"><i class="fa fa-search"></i></button>
           <input class="bg-transparent border-0" placeholder="Temukan produk" style="outline: none" type="search" name="query" required />
         </form>
-        <a class="custom-nav-item"><i class="fa fa-sliders"></i></a>
+        <a class="custom-nav-item" href="#offcanvasFilter" data-bs-toggle="offcanvas"><i class="fa fa-sliders"></i></a>
         <div class="btn-group">
           <a class="custom-nav-item" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-ellipsis-v"></i>
@@ -145,7 +145,16 @@
         </div>
       </div>
     </nav>
-
+    <form action="">
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasFilter" aria-labelledby="offcanvasFilterLabel" style="height: max-content; border-radius: 1rem 1rem 0 0">
+        <div class="offcanvas-header pb-0">
+          <h5 class="offcanvas-title mb-0" id="offcanvasFilterLabel">Filter Products</h5>
+          <button type="reset" class="btn btn-sm btn-danger ms-auto">Reset</button>
+          <button type="button" class="btn btn-sm btn-success ms-1">Apply</button>
+        </div>
+        <div class="offcanvas-body">Maaf Lurr, fitur ini belum tersedia .>_<. Hubungi pengembang aplikasi <a class="link-primary" href="//wa.me/6282323864176" target="blank">di sini</a>.</div>
+      </div>
+    </form>
     <div class="container" style="overflow-x: auto">
       <table class="table-products table-hover table table-striped table-inverse table-responsive">
         <thead class="thead-inverse">
