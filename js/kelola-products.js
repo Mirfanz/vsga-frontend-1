@@ -36,3 +36,17 @@ function showDetail() {
 }
 getProduct();
 btnShowMore.onclick = getProduct;
+
+
+// 
+const swiperProductDetail = new Swiper(".swiper-detail", {
+  spaceBetween: 10,
+  pagination: {
+    el: ".custom-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".slide-next",
+    prevEl: ".slide-prev",
+  },
+});

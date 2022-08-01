@@ -47,3 +47,4 @@ getProducts();
 btnShowMore.onclick = (e) => {
   getProducts();
 };
+

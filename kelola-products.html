@@ -12,49 +12,7 @@
     <title>FanStore | Belanja mudah pasti hemat</title>
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      .form-fdf {
-        transition: 100ms;
-        width: max-content;
-      }
-      .form-fdf input {
-        width: 10rem;
-      }
-      .form-fdf:hover {
-        background-color: rgb(235, 235, 235) !important;
-        box-shadow: 0 0px 5px 0px blueviolet;
-      }
-
-      .table-products {
-        vertical-align: middle;
-      }
-      .table-products .product-index {
-      }
-      .table-products .product-image {
-      }
-      .table-products td.product-image img {
-        width: 40px;
-        aspect-ratio: 1/1;
-      }
-      .table-products td.product-name {
-        min-width: max-content;
-        width: 100%;
-      }
-      .table-products td.product-price {
-        color: blueviolet !important;
-      }
-      .table-products td.product-views {
-        color: royalblue !important;
-      }
-      .table-products td.product-likes {
-        color: rgb(235, 37, 143) !important;
-      }
-      @media only screen and (max-width: 576px) {
-        .table-products :where(.product-views, .product-likes, .product-price) {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/kelola-products.css" />
   </head>
   <body>
     <nav class="navbar navbar-light">
@@ -230,16 +188,61 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content overflow-hidden">
           <div class="modal-header">
-            <h5 class="modal-title product-name">Product Name Ayanokoji</h5>
+            <h5 class="modal-title product-name">Nama Barang Harusnya Tampil Disini</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body p-0">
-            <!-- <iframe src="./detail.html" width="100%" style="height: 90vh;"></iframe> -->
+          <div class="modal-body" style="overflow-x: hidden;">
+            <div class="swiper swiper-detail">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/img/albert einstein.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/albert einstein.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/albert einstein.jpg" alt="" />
+                </div>
+              </div>
+              <button class="slide-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="slide-next"><i class="fas fa-chevron-right"></i></button>
+              <div class="text-center custom-pagination"></div>
+            </div>
+            <div class="mt-3">
+              <h4>Deskripsi</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus eaque quos non vero rem commodi, a, magnam qui eius natus sunt! Unde quaerat voluptatum, eaque esse in laborum expedita, doloribus asperiores accusamus
+                veniam molestias repellendus adipisci officiis optio excepturi inventore ut aliquid blanditiis, magni eligendi dolorem. Non magni consequuntur dolorem.
+              </p>
+            </div>
+            <div class="mt-3">
+              <h4>Harga</h4>
+              <p style="color: var(--bs-indigo)">Rp.250.000</p>
+            </div>
+            <div class="">
+              <table>
+                <tr>
+                  <td style="text-align: center"><i class="far fa-eye"></i></td>
+                  <td>2.538 views</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><i class="far fa-heart"></i></td>
+                  <td>482 loves</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><i class="far fa-calendar-check"></i></td>
+                  <td>17 Agustus 2022</td>
+                </tr>
+              </table>
+            </div>
+            <div class="d-flex justify-content-end mt-3 gap-2">
+              <button type="button" class="btn btn-danger">DELETE</button>
+              <button type="button" class="btn btn-success">UPDATE</button>
+
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger">DELETE</button>
-            <button type="button" class="btn btn-success">UPDATE</button>
-          </div>
+          <!-- <div class="modal-footer">
+          </div> -->
         </div>
       </div>
     </div>
